@@ -52,16 +52,16 @@ function openPopupWindow() {
 
 // Funktion zum Erstellen eines neuen Popup-Fensters
 function createNewPopupWindow() {
-  // Bildschirmgröße ermitteln
+  // Feste Größe für das Popup-Fenster
+  const windowWidth = 400;
+  const windowHeight = 600;
+  
+  // Bildschirmgröße ermitteln für die Positionierung
   chrome.system.display.getInfo(function(displayInfo) {
     if (displayInfo && displayInfo.length > 0) {
       const display = displayInfo[0];
       const screenWidth = display.bounds.width;
       const screenHeight = display.bounds.height;
-      
-      // Fensterbreite und -höhe (90% des Bildschirms)
-      const windowWidth = Math.floor(screenWidth * 0.9);
-      const windowHeight = Math.floor(screenHeight * 0.9);
       
       // Position berechnen (zentriert)
       const left = Math.floor((screenWidth - windowWidth) / 2);
@@ -95,8 +95,8 @@ function createNewPopupWindow() {
       chrome.windows.create({
         url: chrome.runtime.getURL("popup.html"),
         type: "popup",
-        width: 1200,
-        height: 800,
+        width: windowWidth,
+        height: windowHeight,
         focused: true
       }, function(window) {
         popupWindow = window;
