@@ -53,8 +53,8 @@ function openPopupWindow() {
 // Funktion zum Erstellen eines neuen Popup-Fensters
 function createNewPopupWindow() {
   // Feste Größe für das Popup-Fenster
-  const windowWidth = 400;
-  const windowHeight = 600;
+  const windowWidth = 800;
+  const windowHeight = 900;
   
   // Bildschirmgröße ermitteln für die Positionierung
   chrome.system.display.getInfo(function(displayInfo) {
