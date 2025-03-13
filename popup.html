@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html lang="de">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Hemingwai KI-Tool</title>
+  <link rel="stylesheet" href="styles.css">
+  <script src="popup.js" defer></script>
+</head>
+<body>
+  <div class="container">
+    <h1>Hemingwai KI-Tool</h1>
+    
+    <div class="form-group">
+      <label for="apiKey">API-Schlüssel:</label>
+      <input type="password" id="apiKey" placeholder="Dein Hemingwai API-Schlüssel">
+      <button id="saveApiKey">Speichern</button>
+    </div>
+
+    <div class="form-group">
+      <label for="endpointSelect">Wähle einen Hemingwai-Endpoint:</label>
+      <select id="endpointSelect">
+        <option value="" disabled selected>Bitte wählen...</option>
+      </select>
+    </div>
+
+    <div id="parameterInputs" class="parameter-container"></div>
+
+    <div class="button-container">
+      <button id="sendToHemingwai" class="primary-button">Verarbeiten</button>
+      <button id="copyResult" class="secondary-button" disabled>Ergebnis kopieren</button>
+    </div>
+    
+    <div class="result-container">
+      <h3>Ergebnis:</h3>
+      <div id="output" class="output"></div>
+    </div>
+
+    <div class="loading-indicator" id="loadingIndicator">
+      <div class="spinner"></div>
+      <p>Verarbeite Anfrage...</p>
+    </div>
+  </div>
+</body>
+</html> 
