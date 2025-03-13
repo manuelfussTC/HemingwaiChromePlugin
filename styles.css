@@ -19,13 +19,28 @@ body {
   background-color: var(--background-color);
   color: var(--text-color);
   line-height: 1.6;
+  min-width: 800px;
+  margin: 0;
+  padding: 0;
+  height: 100vh;
+  display: flex;
+  justify-content: center;
+  align-items: flex-start;
+  overflow: hidden;
 }
 
 .container {
-  width: 400px;
-  padding: 20px;
+  width: 95vw;
+  max-width: 95vw;
+  min-width: 800px;
+  min-height: 90vh;
+  padding: 30px;
   background-color: white;
   box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
+  margin: 10px auto;
+  position: relative;
+  overflow-y: auto;
+  max-height: 95vh;
 }
 
 h1 {
@@ -61,7 +76,8 @@ input, select, textarea {
 }
 
 textarea {
-  min-height: 100px;
+  min-height: 150px;
+  max-height: 400px;
   resize: vertical;
 }
 
@@ -128,15 +144,16 @@ button {
 }
 
 .output {
-  padding: 15px;
+  padding: 20px;
   border: 1px solid var(--border-color);
   border-radius: 4px;
   background-color: #f9f9f9;
-  min-height: 100px;
-  max-height: 300px;
+  min-height: 300px;
+  max-height: 60vh;
   overflow-y: auto;
   white-space: pre-wrap;
   word-break: break-word;
+  margin-bottom: 20px;
 }
 
 .loading-indicator {

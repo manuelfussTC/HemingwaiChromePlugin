@@ -57,14 +57,15 @@ function createNewPopupWindow() {
     if (displayInfo && displayInfo.length > 0) {
       const display = displayInfo[0];
       const screenWidth = display.bounds.width;
+      const screenHeight = display.bounds.height;
       
-      // Fensterbreite und -höhe
-      const windowWidth = 450;
-      const windowHeight = 600;
+      // Fensterbreite und -höhe (90% des Bildschirms)
+      const windowWidth = Math.floor(screenWidth * 0.9);
+      const windowHeight = Math.floor(screenHeight * 0.9);
       
-      // Position berechnen (rechts mit 20px Abstand)
-      const left = screenWidth - windowWidth - 20;
-      const top = 100; // 100px von oben
+      // Position berechnen (zentriert)
+      const left = Math.floor((screenWidth - windowWidth) / 2);
+      const top = Math.floor((screenHeight - windowHeight) / 2);
       
       // Fenster erstellen
       chrome.windows.create({
@@ -94,8 +95,8 @@ function createNewPopupWindow() {
       chrome.windows.create({
         url: chrome.runtime.getURL("popup.html"),
         type: "popup",
-        width: 450,
-        height: 600,
+        width: 1200,
+        height: 800,
         focused: true
       }, function(window) {
         popupWindow = window;
